@@ -4,11 +4,17 @@ import star from '../images/star.svg'
 
 
 function Card(props){
+  let badgetext 
+  if(props.opensport === 0){
+    badgetext = "SOLD OUT"
+  }else if(props.country === "Online"){
+    badgetext = "ONLINE"
+  }
     return(
         <section className='px-[20px]'>
-        
         <div>
-          <div>
+        <div className='relative'>
+        {badgetext && <div className='absolute top-3 left-3 bg-[white] p-[5px]'>{badgetext}</div>} 
             <img src= {require(`../images/${props.image}`)} alt='sdfs'/>
             <div className='flex mb-[4px] mt-[4px]'>
               <img src={star} alt='starimg' className='pr-[5px]'/>

@@ -8,7 +8,15 @@ function App() {
 
   const dataItems = data.map(d=>{
     return(
-      <Card  image = {d.coverImg}  rating = {d.stats.rating} reviewCount = {d.stats.reviewCount}  country={d.location}  title = {d.title}  price={d.price}/>
+      <Card 
+      key = {d.id}
+      opensport={d.openSpots} 
+      image = {d.coverImg}  
+      rating = {d.stats.rating} 
+      reviewCount = {d.stats.reviewCount}  
+      country={d.location}  
+      title = {d.title}  
+      price={d.price}/>
     )
   })
   return (
@@ -16,7 +24,7 @@ function App() {
       
     <Header/>
     <Body/>
-    <div className='flex'>
+    <div className='flex mb-[50px]'>
    {dataItems}
     </div>  
     </section>
